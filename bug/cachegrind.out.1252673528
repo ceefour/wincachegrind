@@ -1,0 +1,42 @@
+version: 0.9.6
+cmd: /home/www/mypurerave/docs/gallery/p
+part: 1
+
+events: Time Memory
+
+fl=php:internal
+fn=php::explode
+0 109 0
+
+fl=php:internal
+fn=php::count
+0 50 0
+
+fl=php:internal
+fn=php::intval
+0 40 0
+
+fl=php:internal
+fn=php::substr
+0 59 0
+
+fl=php:internal
+fn=php::substr
+0 30 0
+
+fl=php:internal
+fn=php::file_exists
+0 431 0
+
+fl=php:internal
+fn=php::header
+0 319 0
+
+fl=php:internal
+fn=php::header
+0 40 0
+
+fl=php:internal
+fn=php::ob_gzhandler
+0 3170 0
+

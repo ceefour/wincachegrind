@@ -1,0 +1,7 @@
+TODO
+
+[v] MergedInstances list view can be double clicked
+[v] File Explorer in left/bottom side of main form with quick parser
+[ ] Graphical time values
+[ ] Find tab Firefox-style
+[ ] Change Editor so it's an own MDI window

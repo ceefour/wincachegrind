@@ -1,0 +1,26 @@
+File: regexpr.zip
+Product: Regular Expressions for Delphi
+Version: 0.947
+Author: Andrey V. Sorokin
+E-Mail: anso@mail.ru
+Target: Delphi 2.x, Delphi 3.x, Delphi 4.x, Delphi 5.x, Delphi 6.x, C++ Builder 3.x
+Platform: W95, W98, W2000, NT
+Status: Fully Functional 
+Source: Included 
+Description: TRegExpr is a powerfull tool for template-based checking of
+user input string fields (DBMS, web-based applications, etc),
+text search/substitution, egrep like utils and so on.
+
+You can easily check e-mail adress syntax, extract phone number
+or ZIP-code from unformatted text or any necessary information
+from web-pages and all you can imagine!
+Rules (templates) can be changed without program recompilation !
+
+This freeware library is a extended Delphi-port of Henry Spencer
+V8-routins for working with subset of Perl Regular Expressions.
+
+Full source code in object pascal included. No DLL needed !
+
+Help available in English, Russian, German, French, Bulgarian
+and Spanish at my home page http://anso.da.ru/ or 
+http://anso.virtualave.net/
