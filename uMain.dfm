@@ -2,7 +2,7 @@ object fMain: TfMain
   Left = 260
   Top = 245
   Width = 635
-  Height = 411
+  Height = 431
   ActiveControl = lvExplorer
   Caption = 'WinCacheGrind'
   Color = clBtnFace
@@ -23,7 +23,7 @@ object fMain: TfMain
   TextHeight = 13
   object sExplorer: TSplitter
     Left = 0
-    Top = 242
+    Top = 262
     Width = 627
     Height = 4
     Cursor = crVSplit
@@ -31,7 +31,7 @@ object fMain: TfMain
   end
   object sb: TStatusBar
     Left = 0
-    Top = 338
+    Top = 358
     Width = 627
     Height = 19
     AutoHint = True
@@ -111,7 +111,7 @@ object fMain: TfMain
   end
   object lvExplorer: TListView
     Left = 0
-    Top = 246
+    Top = 266
     Width = 627
     Height = 92
     Align = alBottom
@@ -147,21 +147,22 @@ object fMain: TfMain
     OnDblClick = lvExplorerDblClick
     OnKeyDown = lvExplorerKeyDown
   end
-  object tcWindows: TTabControl
+  object tbTabs: TJvTabBar
     Left = 0
     Top = 28
     Width = 627
-    Height = 25
-    Align = alTop
+    Tabs = <
+      item
+        Caption = 'asdasd'
+        ImageIndex = 0
+      end
+      item
+        Caption = 'asdasd'
+        ImageIndex = 2
+      end>
     Images = ilIcons
-    TabOrder = 3
-    Tabs.Strings = (
-      'x'
-      'asdasd'
-      'qwreqr')
-    TabIndex = 0
-    OnChange = tcWindowsChange
-    OnGetImageIndex = tcWindowsGetImageIndex
+    OnTabClosed = tbTabsTabClosed
+    OnTabSelected = tbTabsTabSelected
   end
   object il: TImageList
     Left = 104

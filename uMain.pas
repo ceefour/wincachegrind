@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, ToolWin, Menus, ActnList, XPStyleActnCtrls, ActnMan,
   ImgList, XPMan, AppEvnts, uConfig, ExtCtrls, StdActns, JvComponent,
-  JvChangeNotify;
+  JvChangeNotify, JvTabBar;
 
 type
   TExplorerSort = (esFileName, esTitle, esModified, esSize);
@@ -90,9 +90,11 @@ type
     tUpdateStatusBar: TTimer;
     Close2: TMenuItem;
     ilIcons: TImageList;
-    tcWindows: TTabControl;
     cn: TJvChangeNotify;
     tRefreshExplorer: TTimer;
+    tbTabs: TJvTabBar;
+    procedure tbTabsTabSelected(Sender: TObject; Item: TJvTabBarItem);
+    procedure tbTabsTabClosed(Sender: TObject; Item: TJvTabBarItem);
     procedure aFileOpenExecute(Sender: TObject);
     procedure miFileClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -125,9 +127,6 @@ type
     procedure tUpdateStatusBarTimer(Sender: TObject);
     procedure aeDeactivate(Sender: TObject);
     procedure aeIdle(Sender: TObject; var Done: Boolean);
-    procedure tcWindowsGetImageIndex(Sender: TObject; TabIndex: Integer;
-      var ImageIndex: Integer);
-    procedure tcWindowsChange(Sender: TObject);
     procedure cnChangeNotify(Sender: TObject; Dir: String;
       Actions: TJvChangeActions);
     procedure tRefreshExplorerTimer(Sender: TObject);
@@ -610,42 +609,30 @@ end;
 procedure TfMain.RefreshTabs;
 var
   I: Integer;
+  tab: TJvTabBarItem;
 begin
-  tcWindows.Tabs.BeginUpdate;
+  tbTabs.Tabs.BeginUpdate;
   try
-    tcWindows.Tabs.Clear;
+    tbTabs.Tabs.Clear;
     for I := 0 to MDIChildCount - 1 do begin
+      tab := TJvTabBarItem(tbTabs.Tabs.Add());
       if MDIChildren[I] is TfDoc then begin
-        tcWindows.Tabs.Add(ExtractFileName((MDIChildren[I] as TfDoc).CacheGrind.Cmd))
+        tab.Caption := ExtractFileName((MDIChildren[I] as TfDoc).CacheGrind.Cmd);
+        tab.ImageIndex := 1;
       end else if MDIChildren[I] is TfEditor then begin
-        tcWindows.Tabs.Add(ExtractFileName((MDIChildren[I] as TfEditor).FileName))
+        tab.Caption := ExtractFileName((MDIChildren[I] as TfEditor).FileName);
+        tab.ImageIndex := 2;
       end else
-        tcWindows.Tabs.Add(MDIChildren[I].Caption);
+        tab.Caption := MDIChildren[I].Caption;
     end;
-    if tcWindows.Tabs.Count > 0 then begin
-      tcWindows.TabIndex := 0;
-      tcWindows.Visible := True;
+    if tbTabs.Tabs.Count > 0 then begin
+      tbTabs.SelectedTab := tbTabs.Tabs[0];
+      tbTabs.Visible := true;
     end else
-      tcWindows.Visible := False;
+      tbTabs.Visible := false;
   finally
-    tcWindows.Tabs.EndUpdate;
+    tbTabs.Tabs.EndUpdate;
   end;
-end;
-
-procedure TfMain.tcWindowsGetImageIndex(Sender: TObject; TabIndex: Integer;
-  var ImageIndex: Integer);
-begin
-  if MDIChildren[TabIndex] is TfDoc then
-    ImageIndex := 1
-  else if MDIChildren[TabIndex] is TfEditor then
-    ImageIndex := 2
-  else
-    ImageIndex := -1;
-end;
-
-procedure TfMain.tcWindowsChange(Sender: TObject);
-begin
-  MDIChildren[tcWindows.TabIndex].Show;
 end;
 
 procedure TfMain.cnChangeNotify(Sender: TObject; Dir: String;
@@ -663,6 +650,17 @@ procedure TfMain.tRefreshExplorerTimer(Sender: TObject);
 begin
   tRefreshExplorer.Enabled := False;
   RefreshExplorer;
+end;
+
+procedure TfMain.tbTabsTabClosed(Sender: TObject; Item: TJvTabBarItem);
+begin
+  MDIChildren[Item.Index].Close;
+end;
+
+procedure TfMain.tbTabsTabSelected(Sender: TObject; Item: TJvTabBarItem);
+begin
+  if (Item <> nil) and (Item.Index < MDIChildCount) then
+    MDIChildren[Item.Index].Show;
 end;
 
 end.
