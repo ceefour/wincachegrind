@@ -18,7 +18,7 @@
 		<Compiler>
 			<Compiler Name="A">8</Compiler>
 			<Compiler Name="B">0</Compiler>
-			<Compiler Name="C">1</Compiler>
+			<Compiler Name="C">0</Compiler>
 			<Compiler Name="D">1</Compiler>
 			<Compiler Name="E">0</Compiler>
 			<Compiler Name="F">0</Compiler>
@@ -148,7 +148,7 @@
 			<VersionInfo Name="MajorVer">1</VersionInfo>
 			<VersionInfo Name="MinorVer">0</VersionInfo>
 			<VersionInfo Name="Release">0</VersionInfo>
-			<VersionInfo Name="Build">10</VersionInfo>
+			<VersionInfo Name="Build">12</VersionInfo>
 			<VersionInfo Name="Debug">False</VersionInfo>
 			<VersionInfo Name="PreRelease">False</VersionInfo>
 			<VersionInfo Name="Special">False</VersionInfo>
@@ -160,7 +160,7 @@
 		<VersionInfoKeys>
 			<VersionInfoKeys Name="CompanyName">Ceefour Software</VersionInfoKeys>
 			<VersionInfoKeys Name="FileDescription">WinCacheGrind</VersionInfoKeys>
-			<VersionInfoKeys Name="FileVersion">1.0.0.10</VersionInfoKeys>
+			<VersionInfoKeys Name="FileVersion">1.0.0.12</VersionInfoKeys>
 			<VersionInfoKeys Name="InternalName">WinCacheGrind.exe</VersionInfoKeys>
 			<VersionInfoKeys Name="LegalCopyright">Copyright (C) 2005 Hendy Irawan</VersionInfoKeys>
 			<VersionInfoKeys Name="LegalTrademarks">Licensed under GNU GPL version 2 or later</VersionInfoKeys>
@@ -169,6 +169,8 @@
 			<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
 			<VersionInfoKeys Name="Comments">WinCacheGrind</VersionInfoKeys>
 		</VersionInfoKeys>  
+    
+    
     <Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclnet90.bpl">Borland Internet Components</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclIndyCore90.bpl">Indy 10 Core Design Time</Excluded_Packages>

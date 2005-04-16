@@ -94,6 +94,7 @@ type
     tRefreshExplorer: TTimer;
     tbTabs: TJvTabBar;
     AppInstances: TJvAppInstances;
+    procedure FormShow(Sender: TObject);
     procedure AppInstancesCmdLineReceived(Sender: TObject; CmdLine: TStrings);
     procedure tbTabsTabSelected(Sender: TObject; Item: TJvTabBarItem);
     procedure tbTabsTabClosed(Sender: TObject; Item: TJvTabBarItem);
@@ -308,11 +309,11 @@ begin
       #13#10 +
       'Contact information:'#13#10 +
       'E-mail: ceefour@gauldong.net'#13#10 +
-      'Web: http://hendy.gauldong.net'#13#10 +
-      'WinCacheGrind page: http://dev.gauldong.net/wincachegrind'#13#10 +
+      'Web: http://wincachegrind.sourceforge.net/'#13#10 +
       #13#10 +
       'This program is licensed under GNU General Public License version ' +
-      '2 or later.', mtInformation, [mbOK], 0);
+      '2 or later.'#13#10 +
+      'See GPL.txt for more information.', mtInformation, [mbOK], 0);
   finally
     FreeAndNil(VI);
   end;
@@ -670,9 +671,20 @@ procedure TfMain.AppInstancesCmdLineReceived(Sender: TObject;
 var
   i: Integer;
 begin
-  for i := 1 to CmdLine.Count - 1 do begin
+  for i := 0 to CmdLine.Count - 1 do begin
     Open(CmdLine[i]);
   end;
+end;
+
+procedure TfMain.FormShow(Sender: TObject);
+var
+  i: Integer;
+begin
+  // open stuff from command line
+  // Note: You can't move this to onCreate because the MDI form
+  // has to be active first before creating an MDI child
+  for i := 1 to ParamCount do
+    Open(ParamStr(i));
 end;
 
 end.
