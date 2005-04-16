@@ -1401,4 +1401,9 @@ object fMain: TfMain
     Left = 288
     Top = 72
   end
+  object AppInstances: TJvAppInstances
+    OnCmdLineReceived = AppInstancesCmdLineReceived
+    Left = 536
+    Top = 216
+  end
 end

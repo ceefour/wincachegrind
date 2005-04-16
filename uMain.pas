@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, ToolWin, Menus, ActnList, XPStyleActnCtrls, ActnMan,
   ImgList, XPMan, AppEvnts, uConfig, ExtCtrls, StdActns, JvComponent,
-  JvChangeNotify, JvTabBar;
+  JvChangeNotify, JvTabBar, JvAppInst;
 
 type
   TExplorerSort = (esFileName, esTitle, esModified, esSize);
@@ -93,6 +93,8 @@ type
     cn: TJvChangeNotify;
     tRefreshExplorer: TTimer;
     tbTabs: TJvTabBar;
+    AppInstances: TJvAppInstances;
+    procedure AppInstancesCmdLineReceived(Sender: TObject; CmdLine: TStrings);
     procedure tbTabsTabSelected(Sender: TObject; Item: TJvTabBarItem);
     procedure tbTabsTabClosed(Sender: TObject; Item: TJvTabBarItem);
     procedure aFileOpenExecute(Sender: TObject);
@@ -661,6 +663,16 @@ procedure TfMain.tbTabsTabSelected(Sender: TObject; Item: TJvTabBarItem);
 begin
   if (Item <> nil) and (Item.Index < MDIChildCount) then
     MDIChildren[Item.Index].Show;
+end;
+
+procedure TfMain.AppInstancesCmdLineReceived(Sender: TObject;
+  CmdLine: TStrings);
+var
+  i: Integer;
+begin
+  for i := 1 to CmdLine.Count - 1 do begin
+    Open(CmdLine[i]);
+  end;
 end;
 
 end.

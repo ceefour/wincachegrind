@@ -1,7 +1,7 @@
 WinCacheGrind
 by Hendy Irawan <ceefour@gauldong.net>
-Web: http://hendy.gauldong.net
-WinCacheGrind page: http://dev.gauldong.net/wincachegrind
+http://wincachegrind.sourceforge.net/
+$Id$
 
 Project started: Jan 17, 2005 around 6 o'clock in the morning West Indonesia Time
 

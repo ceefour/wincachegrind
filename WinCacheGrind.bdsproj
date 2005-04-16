@@ -168,7 +168,8 @@
 			<VersionInfoKeys Name="ProductName">WinCacheGrind</VersionInfoKeys>
 			<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
 			<VersionInfoKeys Name="Comments">WinCacheGrind</VersionInfoKeys>
-		</VersionInfoKeys>  <Excluded_Packages>
+		</VersionInfoKeys>  
+    <Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclnet90.bpl">Borland Internet Components</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclIndyCore90.bpl">Indy 10 Core Design Time</Excluded_Packages>
       <Excluded_Packages Name="F:\B\BDS3\Bin\dbx90.bpl">Borland SQL Explorer UI Package</Excluded_Packages>
@@ -180,7 +181,6 @@
       <Excluded_Packages Name="D:\c4\Borland Studio Projects\Bpl\JvDBD9D.bpl">JVCL Database Components</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclsmpedit90.bpl">Borland Editor Script Enhancements</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclsmp90.bpl">Borland Sample Components</Excluded_Packages>
-      <Excluded_Packages Name="f:\b\bds3\Bin\dcl31w90.bpl">Delphi 1.0 Compatibility Components</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclshlctrls90.bpl">Shell Control Property and Component Editors</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclemacsedit90.bpl">Borland Editor Emacs Enhancements</Excluded_Packages>
       <Excluded_Packages Name="f:\b\bds3\Bin\dclmlwiz90.bpl">Borland Markup Language Wizards</Excluded_Packages>
