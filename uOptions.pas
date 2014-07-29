@@ -32,6 +32,10 @@ type
     seFastThreshold: TJvSpinEdit;
     seMaxMRUCount: TJvSpinEdit;
     Label5: TLabel;
+    Editor: TTabSheet;
+    Label6: TLabel;
+    deEditorPath: TJvFilenameEdit;
+    Label7: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure bOKClick(Sender: TObject);
     procedure bClearMRUClick(Sender: TObject);
@@ -68,6 +72,8 @@ begin
   cbTrackMRU.Checked := Config.TrackMRU;
   cbClearMRUOnExit.Checked := Config.ClearMRUOnExit;
   seMaxMRUCount.Value := Config.MaxMRUCount;
+  //editor
+  deEditorPath.Text := Config.EditorPath;
 end;
 
 procedure TfOptions.bOKClick(Sender: TObject);
@@ -85,6 +91,8 @@ begin
   Config.TrackMRU := cbTrackMRU.Checked;
   Config.ClearMRUOnExit := cbClearMRUOnExit.Checked;
   Config.MaxMRUCount := seMaxMRUCount.AsInteger;
+  //editor
+  Config.EditorPath := deEditorPath.Text;
   // then save
   Config.Save;
   ModalResult := mrOk;

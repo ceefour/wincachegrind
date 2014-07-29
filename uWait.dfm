@@ -1,6 +1,6 @@
 object fWait: TfWait
-  Left = 229
-  Top = 154
+  Left = 937
+  Top = 312
   BorderStyle = bsToolWindow
   Caption = 'Please wait...'
   ClientHeight = 84

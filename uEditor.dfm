@@ -1,5 +1,5 @@
 object fEditor: TfEditor
-  Left = 549
+  Left = 593
   Top = 427
   Width = 320
   Height = 240
@@ -72,21 +72,15 @@ object fEditor: TfEditor
     Left = 0
     Top = 26
     Width = 312
-    Height = 180
+    Height = 187
     Cursor = crIBeam
-    GutterWidth = 0
-    RightMarginColor = clSilver
     Completion.ItemHeight = 13
-    Completion.Interval = 800
-    Completion.ListBoxStyle = lbStandard
-    Completion.CaretChar = '|'
     Completion.CRLF = '/n'
     Completion.Separator = '='
     TabStops = '5 9 13 17 21 25 29 33 37 41 45 49 53 57 61 65 69 73 77'
     SmartTab = False
     BackSpaceUnindents = False
-    SelForeColor = clHighlightText
-    SelBackColor = clHighlight
+    BracketHighlighting.StringEscape = #39#39
     OnGetLineAttr = heGetLineAttr
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -94,10 +88,6 @@ object fEditor: TfEditor
     Font.Height = -13
     Font.Name = 'Courier New'
     Font.Style = []
-    ParentColor = False
-    ParentFont = False
-    TabStop = True
-    UseDockManager = False
     Highlighter = hlPhp
     Colors.Comment.Style = [fsItalic]
     Colors.Comment.ForeColor = clOlive

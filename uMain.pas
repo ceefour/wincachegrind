@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, ToolWin, Menus, ActnList, XPStyleActnCtrls, ActnMan,
   ImgList, XPMan, AppEvnts, uConfig, ExtCtrls, StdActns, JvComponent,
-  JvChangeNotify, JvTabBar, JvAppInst;
+  JvChangeNotify, JvTabBar, JvAppInst, JvComponentBase;
 
 type
   TExplorerSort = (esFileName, esTitle, esModified, esSize);
@@ -571,7 +571,13 @@ procedure TfMain.OpenEditor(AFileName: string; AOwner: TComponent; Line: Integer
 var
   I: Integer;
   Editor: TfEditor;
+  Params: PAnsiChar;
 begin
+  if Config.EditorPath <> '' then begin
+    Params := pchar(' -n' + IntTostr(Line)+' "'+AFileName+'"');
+    ShellExecute(Handle, '', PChar(Config.EditorPath),Params, '', SW_SHOWNORMAL);
+    Exit;
+  end;
   Editor := nil;
   // first check if this file is already opened
   for I := 1 to MDIChildCount - 1 do begin

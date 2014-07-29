@@ -1,6 +1,6 @@
 object fOptions: TfOptions
-  Left = 221
-  Top = 175
+  Left = 606
+  Top = 363
   ActiveControl = pc
   BorderStyle = bsDialog
   BorderWidth = 8
@@ -55,7 +55,7 @@ object fOptions: TfOptions
     Top = 0
     Width = 400
     Height = 245
-    ActivePage = tsDisplay
+    ActivePage = Editor
     Align = alClient
     TabOrder = 0
     object tsMain: TTabSheet
@@ -210,6 +210,33 @@ object fOptions: TfOptions
           Value = 1.000000000000000000
           TabOrder = 3
         end
+      end
+    end
+    object Editor: TTabSheet
+      Caption = 'Editor'
+      ImageIndex = 3
+      object Label6: TLabel
+        Left = 24
+        Top = 16
+        Width = 52
+        Height = 13
+        Caption = 'Editor Path'
+      end
+      object Label7: TLabel
+        Left = 56
+        Top = 72
+        Width = 115
+        Height = 13
+        Caption = '*only support notepad++'
+      end
+      object deEditorPath: TJvFilenameEdit
+        Left = 96
+        Top = 12
+        Width = 273
+        Height = 21
+        Filter = 'All files (*.*)|*.exe'
+        TabOrder = 0
+        Text = 'deEditorPath'
       end
     end
   end

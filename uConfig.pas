@@ -24,6 +24,7 @@ type
     FWorkingDir: string;
     FHideFastFuncs: Boolean;
     FFastThreshold: Integer;
+    FEditorPath: string;
     procedure SetMaxMRUCount(const Value: Integer);
   public
     property ClearMRUOnExit: Boolean read FClearMRUOnExit write FClearMRUOnExit;
@@ -37,6 +38,7 @@ type
     property TrackMRU: Boolean read FTrackMRU write FTrackMRU;
     property ShowFullPath: Boolean read FShowFullPath write FShowFullPath;
     property WorkingDir: string read FWorkingDir write FWorkingDir;
+    property EditorPath: string read FEditorPath write FEditorPath;
 
     procedure AddMRU(AFileName, ATitle: string);
     procedure ClearMRU;
@@ -119,6 +121,8 @@ begin
       MRU.Add(F.ReadString('MRU', 'Entry' + IntToStr(I), ''));
       MRUTitles.Add(F.ReadString('MRU', 'Title' + IntToStr(I), 'Untitled'));
     end;
+    //editor
+    EditorPath := F.ReadString('Editor', 'EditorPath', '');
   finally
     F.Free;
   end;
@@ -161,6 +165,8 @@ begin
       F.WriteString('MRU', 'Entry' + IntToStr(I), MRU[I]);
       F.WriteString('MRU', 'Title' + IntToStr(I), MRUTitles[I]);
     end;
+    //editor
+    F.WriteString('Editor', 'EditorPath', EditorPath);
   finally
     F.Free;
   end;

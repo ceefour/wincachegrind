@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 260
-  Top = 245
+  Left = 855
+  Top = 272
   Width = 635
   Height = 431
   ActiveControl = lvExplorer
@@ -24,7 +24,7 @@ object fMain: TfMain
   TextHeight = 13
   object sExplorer: TSplitter
     Left = 0
-    Top = 262
+    Top = 270
     Width = 627
     Height = 4
     Cursor = crVSplit
@@ -32,7 +32,7 @@ object fMain: TfMain
   end
   object sb: TStatusBar
     Left = 0
-    Top = 358
+    Top = 366
     Width = 627
     Height = 19
     AutoHint = True
@@ -112,7 +112,7 @@ object fMain: TfMain
   end
   object lvExplorer: TListView
     Left = 0
-    Top = 266
+    Top = 274
     Width = 627
     Height = 92
     Align = alBottom
@@ -152,16 +152,17 @@ object fMain: TfMain
     Left = 0
     Top = 28
     Width = 627
+    Images = ilIcons
     Tabs = <
       item
         Caption = 'asdasd'
+        Selected = True
         ImageIndex = 0
       end
       item
         Caption = 'asdasd'
         ImageIndex = 2
       end>
-    Images = ilIcons
     OnTabClosed = tbTabsTabClosed
     OnTabSelected = tbTabsTabSelected
   end

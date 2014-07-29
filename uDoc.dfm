@@ -1,6 +1,6 @@
 object fDoc: TfDoc
-  Left = 328
-  Top = 284
+  Left = 329
+  Top = 292
   Width = 781
   Height = 448
   Caption = 'Profiler Document'
@@ -37,7 +37,7 @@ object fDoc: TfDoc
     Left = 261
     Top = 28
     Width = 4
-    Height = 366
+    Height = 374
   end
   object tb: TToolBar
     Left = 0
@@ -129,7 +129,7 @@ object fDoc: TfDoc
     Left = 0
     Top = 28
     Width = 261
-    Height = 366
+    Height = 374
     Align = alLeft
     ChangeDelay = 50
     HideSelection = False
@@ -149,7 +149,7 @@ object fDoc: TfDoc
     Left = 265
     Top = 28
     Width = 508
-    Height = 366
+    Height = 374
     Align = alClient
     BevelOuter = bvNone
     Caption = ' '
@@ -158,7 +158,7 @@ object fDoc: TfDoc
       Left = 0
       Top = 53
       Width = 508
-      Height = 313
+      Height = 321
       ActivePage = tsMerged
       Align = alClient
       Images = il
@@ -169,7 +169,7 @@ object fDoc: TfDoc
           Left = 0
           Top = 0
           Width = 500
-          Height = 284
+          Height = 292
           Align = alClient
           Columns = <
             item
@@ -213,7 +213,7 @@ object fDoc: TfDoc
         ImageIndex = 1
         object Splitter2: TSplitter
           Left = 0
-          Top = 156
+          Top = 164
           Width = 500
           Height = 4
           Cursor = crVSplit
@@ -223,7 +223,7 @@ object fDoc: TfDoc
           Left = 0
           Top = 33
           Width = 500
-          Height = 107
+          Height = 115
           Align = alClient
           Columns = <
             item
@@ -268,7 +268,7 @@ object fDoc: TfDoc
         end
         object lvMergedInstances: TListView
           Left = 0
-          Top = 160
+          Top = 168
           Width = 500
           Height = 124
           Align = alBottom
@@ -374,7 +374,6 @@ object fDoc: TfDoc
             Top = 4
             Width = 209
             Height = 21
-            ItemHeight = 13
             TabOrder = 0
             OnChange = cbFindChange
             OnSelect = cbFindSelect
@@ -386,7 +385,7 @@ object fDoc: TfDoc
         end
         object Panel3: TPanel
           Left = 0
-          Top = 140
+          Top = 148
           Width = 500
           Height = 16
           Align = alBottom
