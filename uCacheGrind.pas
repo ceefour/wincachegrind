@@ -708,7 +708,7 @@ var
 function FormatInst(Inst: TProfInstance): string;
 begin
   Result := Inst.Name +' ('+ Inst.FileName +':'+ IntToStr(Inst.ParserLine) +')'
-    + ' Cum:'+ Format('%.0f', [Inst.CumTime*10000]) +' Self:'+ Format('%.0f', [Inst.SelfTime*10000]);
+    + ' Cum:'+ Format('%.0f', [Inst.CumTime*1000]) +' Self:'+ Format('%.0f', [Inst.SelfTime*1000]);
 end;
 
 begin
@@ -736,7 +736,7 @@ begin
     for I := 0 to Buffer.Count - 1 do begin
       CB := PCallBuffer(Buffer[I]);
       S := S + #13#10 + 'Call buffer['+ IntToStr(I) +']: '+ CB^.Name +
-        ' Line:' + IntToStr(CB^.Line) + ' Cum:' + Format('%.0f', [CB^.CumTime * 10000]);
+        ' Line:' + IntToStr(CB^.Line) + ' Cum:' + Format('%.0f', [CB^.CumTime * 1000]);
     end;
   end;
   S := S + #13#10;
@@ -824,9 +824,9 @@ begin
               end;
               if CurBuf <> nil then begin
                 CurBuf^.Line := StrToInt(A);
-                CurBuf^.CumTime := StrToInt64(B) / 10000;
+                CurBuf^.CumTime := StrToInt64(B) / 1000;
               end else
-                CurInst.SelfTime := StrToInt64(B) / 10000;
+                CurInst.SelfTime := StrToInt64(B) / 1000;
             end else if Copy(S, 1, 4) = 'cfn=' then begin
               // must have inst first
               if CurInst = nil then Error('Parser error: Parsing '+ S +': Current instance is NULL.');
