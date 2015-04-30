@@ -122,9 +122,15 @@ independent works based on this project.
 
 ## Compiling the source
 
-To compile the source, you need the following libraries in addition to Delphi 7:
+To compile the source, you need the following:
 
-* [JEDI Code Library JVCL v2.10](http://sourceforge.net/projects/jvcl/files/JVCL%20Past%20Releases/JVCL%202.10%20Stable/)
+* Delphi v?
+* [JEDI Code Library v?](http://wiki.delphi-jedi.org/index.php?title=JEDI_Code_Library) + [JVCL v?](http://jvcl.delphi-jedi.org/)
+
+Version <= 1.0.0.14 :
+
+* Delphi 7
+* [JEDI Code Library + JVCL v2.10](http://sourceforge.net/projects/jvcl/files/JVCL%20Past%20Releases/JVCL%202.10%20Stable/)
 
 ## Credits & Acknowledgments
 
