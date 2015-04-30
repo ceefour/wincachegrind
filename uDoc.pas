@@ -623,14 +623,21 @@ procedure TfDoc.tvExpanding(Sender: TObject; Node: TTreeNode;
 var
   Inst: TProfInstance;
   I: Integer;
+  S: string;
 begin
   if Node.HasChildren and (Node.Count = 0) then begin
     tv.Items.BeginUpdate;
     try
       // we do need to expand this
       Inst := TProfInstance(Node.Data);
-      for I := 0 to Inst.CallCount - 1 do
-        AddToTree(Node, Inst.Calls[I], False);
+      for I := 0 to Inst.CallCount - 1 do begin
+        if UseShortName then
+          S := Inst.Calls[I].ShortName
+        else
+          S := Inst.Calls[I].Name;
+        if not(FHideLibFuncs and (Pos('php::', S) = 1)) then
+            AddToTree(Node, Inst.Calls[I], False);
+      end;
     finally
       tv.Items.EndUpdate;
     end;
