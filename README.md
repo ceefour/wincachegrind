@@ -124,13 +124,11 @@ independent works based on this project.
 
 To compile the source, you need the following:
 
-* Delphi v?
-* [JEDI Code Library v?](http://wiki.delphi-jedi.org/index.php?title=JEDI_Code_Library) + [JVCL v?](http://jvcl.delphi-jedi.org/)
-
-Version <= 1.0.0.14 :
-
 * Delphi 7
-* [JEDI Code Library + JVCL v2.10](http://sourceforge.net/projects/jvcl/files/JVCL%20Past%20Releases/JVCL%202.10%20Stable/)
+* [JVCL v3.47 (+JCL)](http://sourceforge.net/projects/jvcl/files/JVCL%203/JVCL%203.47/)
+
+	Important: Apply [bugfix 6024](http://issuetracker.delphi-jedi.org/view.php?id=6024)
+	to `JVCL347\jvcl\devtools\PackagesGenerator\GenerateDefines.pas`.
 
 ## Credits & Acknowledgments
 
