@@ -19,7 +19,7 @@ unit uCacheGrind;
 
 interface
 
-uses Classes, SysUtils, JclStrHashMap;
+uses Classes, SysUtils, JclStrHashMap, RegExpr;
 
 type
   // Types
@@ -697,6 +697,37 @@ var
   CurInst, LastInst: TProfInstance;
   Stack, Buffer: TList;
   I, P, ParserLine: Integer;
+  Compresseds: TStringHashMap;
+
+function Uncompress(section: string; raw: string): string;
+var
+  id: string;
+  key: string;
+  _content: PString;
+begin
+  with TRegExpr.Create do try
+    // check if this is an assignment of compression
+    Expression := '\((\d+)\)\s*(.*)';
+    if Exec(raw) then begin
+      id := Match[1];
+      key := section + '-' + id;
+      if Match[2] <> '' then begin
+        // this is an assignment
+        New(_content);
+        _content^ := Match[2];
+        Compresseds.Add(key, _content);
+        Result := Match[2];
+      end else begin
+        // this is an uncompression
+        Result := PString(Compresseds.Data[key])^;
+      end;
+    end else begin
+      // otherwise just return as-is
+      Result := raw;
+    end;
+  finally Free;
+  end;
+end;
 
 procedure Error(Msg: string);
 var
@@ -752,6 +783,12 @@ begin
   Buffer.Clear;
 end;
 
+  function FreeHashData(AUserData: Pointer; AStr: string; var APtr: PString): Boolean;
+  begin
+    Dispose(APtr);
+    Result := True;
+  end;
+
 var
   CurBuf: PCallBuffer;
   Target: TProfInstance;
@@ -777,6 +814,7 @@ begin
     FSummaryExists := False;
     Stack := TList.Create;
     Buffer := TList.Create;
+    Compresseds := TStringHashMap.Create(TCaseSensitiveTraits.Create, 100000);
     ParserLine := 1;
     try
       while not Eof(F) do begin
@@ -799,10 +837,10 @@ begin
               State := stBody;
           end;
           stBody: begin
-            if Copy(S, 1, 3) = 'fl=' then
-              CurFL := Copy(S, 3 + 1, Length(S) - 3)
-            else if Copy(S, 1, 3) = 'fn=' then begin
-              CurFN := Copy(S, 3 + 1, Length(S) - 3);
+            if Copy(S, 1, 3) = 'fl=' then begin
+              CurFL := Uncompress('fl', Copy(S, 3 + 1, Length(S) - 3) )
+            end else if Copy(S, 1, 3) = 'fn=' then begin
+              CurFN := Uncompress('fn', Copy(S, 3 + 1, Length(S) - 3) );
               if CurFL = '' then Error('Parser error: fl is not valid.');
               if CurFN = '' then Error('Parser error: fn is not valid.');
               CurInst := CreateInstance(CurFN, CurFL); // TODO: SLOW!
@@ -831,7 +869,7 @@ begin
               // must have inst first
               if CurInst = nil then Error('Parser error: Parsing '+ S +': Current instance is NULL.');
               // get function name
-              A := Copy(S, 4 + 1, Length(S) - 4);
+              A := Uncompress('fn', Copy(S, 4 + 1, Length(S) - 4) );
               // add to call buffer
               New(CurBuf);
               Buffer.Add(CurBuf);
@@ -925,6 +963,8 @@ begin
         Stack.Clear;
       end;
     finally
+      Compresseds.Iterate(nil, @FreeHashData);
+      Compresseds.Free;
       Stack.Free;
       Buffer.Free;
     end;

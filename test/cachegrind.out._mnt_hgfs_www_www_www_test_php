@@ -1,0 +1,183 @@
+version: 1
+creator: xdebug 2.3.2
+cmd: E:/www/www/www/test.php
+part: 1
+positions: line
+
+events: Time
+
+fl=(1) E:/www/www/www/test.php
+fn=(1) B->_sayEnd
+12 3
+
+fl=(1)
+fn=(2) A->say
+3 54
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 3
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 24
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 22
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 20
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 1
+
+fl=(1)
+fn=(2)
+3 21
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 1
+
+fl=(1)
+fn=(1)
+12 1
+
+fl=(1)
+fn=(2)
+3 20
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 1
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 46
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 22
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 20
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(1)
+12 0
+
+fl=(1)
+fn=(2)
+3 20
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+6 0
+
+fl=(1)
+fn=(3) thisIsFun
+17 309
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 57
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 25
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 23
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 21
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 22
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 22
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 47
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 23
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 21
+cfl=(1)
+cfn=(2)
+calls=1 0 0
+20 21
+
+fl=(1)
+fn=(4) {main}
+
+summary: 708
+
+1 108
+cfl=(1)
+cfn=(3)
+calls=1 0 0
+23 600
+

@@ -1,6 +1,6 @@
 object fMain: TfMain
-  Left = 855
-  Top = 272
+  Left = 637
+  Top = 224
   Width = 635
   Height = 431
   ActiveControl = lvExplorer
@@ -24,16 +24,16 @@ object fMain: TfMain
   TextHeight = 13
   object sExplorer: TSplitter
     Left = 0
-    Top = 270
-    Width = 627
+    Top = 257
+    Width = 619
     Height = 4
     Cursor = crVSplit
     Align = alBottom
   end
   object sb: TStatusBar
     Left = 0
-    Top = 366
-    Width = 627
+    Top = 353
+    Width = 619
     Height = 19
     AutoHint = True
     Panels = <
@@ -45,7 +45,7 @@ object fMain: TfMain
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 627
+    Width = 619
     Height = 28
     AutoSize = True
     BorderWidth = 1
@@ -112,8 +112,8 @@ object fMain: TfMain
   end
   object lvExplorer: TListView
     Left = 0
-    Top = 274
-    Width = 627
+    Top = 261
+    Width = 619
     Height = 92
     Align = alBottom
     Columns = <
@@ -151,7 +151,7 @@ object fMain: TfMain
   object tbTabs: TJvTabBar
     Left = 0
     Top = 28
-    Width = 627
+    Width = 619
     Images = ilIcons
     Tabs = <
       item

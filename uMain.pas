@@ -305,15 +305,14 @@ begin
   try
     MessageDlg(
       'WinCacheGrind version '+ VI.BinFileVersion + #13#10 +
-      'Copyright (C) 2005 Hendy Irawan'#13#10 +
+      'Copyright (C) 2005-2015 Hendy Irawan'#13#10 +
       #13#10 +
       'Contact information:'#13#10 +
-      'E-mail: ceefour@gauldong.net'#13#10 +
-      'Web: http://wincachegrind.sourceforge.net/'#13#10 +
+      'Web: http://ceefour.github.io/wincachegrind/'#13#10 +
+      'E-mail: hendy@hendyirawan.com'#13#10 +
       #13#10 +
-      'This program is licensed under GNU General Public License version ' +
-      '2 or later.'#13#10 +
-      'See GPL.txt for more information.', mtInformation, [mbOK], 0);
+      'This program is licensed under GNU General Public License version v3.'#13#10 +
+      'See LICENSE file for more information.', mtInformation, [mbOK], 0);
   finally
     FreeAndNil(VI);
   end;

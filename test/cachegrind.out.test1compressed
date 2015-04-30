@@ -1,0 +1,34 @@
+version: 0.9.6
+cmd: /home/data/www/htdocs/example.php
+part: 1
+
+events: Time Memory Cycles Peakmemory
+
+fl=(1) /home/data/www/htdocs/example.php
+fn=(1) test3
+11 16 40 0 0
+
+fl=(1)
+fn=(1)
+12 7 0 0 0
+
+fl=(1)
+fn=(2) test2
+7 141 120 0 0
+cfn=(1)
+calls=1 0 0
+11 16 40 0 0
+cfn=(1)
+calls=1 0 0
+12 7 0 0 0
+
+fl=(1)
+fn=test1
+3 60 120 0 0
+cfn=(2)
+calls=1 0 0
+7 165 160 0 0
+
+fl=(1)
+fn=test4
+4 6 0 0 0

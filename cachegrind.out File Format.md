@@ -73,3 +73,11 @@ Why it's not included in "main program" is because these are called not by
 main program but by PHP mechanism.
 
 The entries here are identical to *BODY PART*.
+
+## File and Function Name Compresssion
+
+See http://valgrind.org/docs/manual/cl-format.html#cl-format.overview.compression1
+
+Original issue: https://github.com/ceefour/wincachegrind/issues/1
+
+Thanks to Stéphane Boisvert for donation. :)
