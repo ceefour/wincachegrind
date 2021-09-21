@@ -8,6 +8,15 @@ only it is much simpler and runs on Windows.
 
 Project started: Jan 17, 2005 around 6 o'clock in the morning West Indonesia Time
 
+## PROJECT IS NO LONGER MAINTAINED
+
+WinCacheGrind is no longer maintained.
+
+You may have better luck with [QCacheGrind](https://sourceforge.net/projects/qcachegrindwin/), which is a popular alternative for Windows.
+
+- Hendy
+
+
 ## Overview
 
 This project is a [KCacheGrind](http://kcachegrind.sourceforge.net/)-wannabe for Windows.
